@@ -27,15 +27,15 @@ jobs:
 
       - name: Build Docker image with tags
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/miapp:latest \
-                       -t ${{ secrets.DOCKER_USERNAME }}/miapp:${{ env.SHA_SHORT }} \
-                       -t ${{ secrets.DOCKER_USERNAME }}/miapp:${{ env.DATE }} .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/hola-mundo:latest \
+                       -t ${{ secrets.DOCKER_USERNAME }}/hola-mundo:${{ env.SHA_SHORT }} \
+                       -t ${{ secrets.DOCKER_USERNAME }}/hola-mundo:${{ env.DATE }} .
 
       - name: Push Docker images
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/miapp:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/miapp:${{ env.SHA_SHORT }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/miapp:${{ env.DATE }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/hola-mundo:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/hola-mundo:${{ env.SHA_SHORT }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/hola-mundo:${{ env.DATE }}
 
       - name: Trigger Render deploy
         run: |
